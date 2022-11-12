@@ -1,24 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import TopBar from './TopBar'
+import Home from './pages/Home'
+import TA from './pages/TA'
+import Contact from './pages/Contact'
+import Gift from './pages/Gift'
+import { Route, Routes } from "react-router-dom"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <TopBar />
+      <div className="container">
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/TA' element={<TA />} />
+          <Route path='/gift' element={<Gift />} />
+          <Route path='/contact' element={<Contact />} />
+        </Routes>
+      </div>
+    </>
   );
 }
 

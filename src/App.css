@@ -1,38 +1,134 @@
-.App {
-  text-align: center;
+:root {
+  --bg: #242526;
+  --bg-accent: #484a4d;
+  --text-color: #dadce1;
+  --nav-size: 90px;
+  --border: 1px solid #474a4d;
+  --border-radius: 8px;
+  --speed: 500ms;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body {
+  margin: 0;
+  background-color: var(--bg-accent);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  margin: 1rem;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+nav {
+  /* height: var(--nav-size); */
+  background-color: var(--bg);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 5rem;
+  padding: 0 1rem;
+  /* border-bottom-width: var(--border-radius); */
+  border-bottom: var(--border);
+  flex-wrap: wrap
+}
+
+@media (max-width: 543px) {
+  .nav ul span {
+    display: none;
+    visibility: hidden;
   }
-  to {
-    transform: rotate(360deg);
+
+  .icon-button svg {
+    display: none;
   }
+}
+
+.nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav a {
+  color: inherit;
+  text-decoration: none;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .50rem;
+}
+
+
+.nav li.active {
+  background-color: var(--bg-accent);
+}
+
+/* .nav li:hover {
+  background-color: var(--bg-accent);
+} */
+
+
+.logo {
+  --button-size: calc(var(--nav-size) * 0.5);
+  width: var(--button-size *2);
+  height: var(--button-size);
+  border-radius: 50%;
+  background-color: white;
+  padding: 10px;
+  margin: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: filter 300ms;
+}
+
+.logo:hover svg {
+  filter: brightness(1.2);
+}
+
+
+.logo svg {
+  fill: var(--text-color);
+  height: 55px;
+  width: 55px;
+}
+
+.icon-button {
+  --button-size: calc(var(--nav-size) * 0.5);
+  width: var(--button-size);
+  height: var(--button-size);
+  border-radius: 50%;
+  background-color: white;
+  padding: 5px;
+  margin: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: filter 300ms;
+}
+
+.icon-button:hover {
+  filter: brightness(1.2)
+}
+
+.icon-button svg {
+  fill: var(--text-color);
+  height: 20px;
+  width: 20px;
+}
+
+.home-logo svg {
+  fill: var(--text-color);
+  height: 150px;
+  width: 150px;
+  display: flex;
+  justify-items: flex-start;
 }
