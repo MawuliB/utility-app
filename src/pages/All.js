@@ -1,12 +1,20 @@
 import React from 'react'
 import CustomLink from '../Routing';
-import { data } from '../toolsdata'
+// import { toolsdata } from '../toolsdata'
 
-export default function Basic() {
+export default function All({ CAT, data }) {
+
+    function SortOut(cat) {
+        if (cat === 'All') { return data }
+        const resultData = data.filter(d => d.category === cat)
+        // console.log(resultData)
+        return resultData
+    }
+
     return (
         <div className='tools'>
             <ul>
-                <Items tools={data} />
+                <Items tools={SortOut(CAT)} />
             </ul>
         </div>
     )

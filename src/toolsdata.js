@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid'
 
-export const data = [
+export let toolsdata = [
     {
         'id': uuidv4(),
         'name': 'Convert PDF to TXT',
@@ -17,14 +17,14 @@ export const data = [
         'id': uuidv4(),
         'name': 'Convert CSV to XML',
         'path': '/Csvtoxml',
-        'description': 'For converting pdf files to txt files',
-        'category': 'Data Science',
+        'description': 'For converting',
+        'category': 'Image',
     },
     {
         'id': uuidv4(),
         'name': 'Convert CSV to XML',
         'path': '/Csvtoxml',
-        'description': 'For converting pdf files to txt files',
+        'description': 'For converting',
         'category': 'Data Science',
     },
 ]
